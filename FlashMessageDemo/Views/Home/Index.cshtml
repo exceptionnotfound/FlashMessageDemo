@@ -1,0 +1,22 @@
+﻿@model FlashMessageDemo.ViewModels.Home.HomeIndexVM
+
+@{
+    ViewBag.Title = "FlashMessage Test";
+}
+
+@Html.Partial("FlashMessage")
+
+@using(Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div>
+        <div>
+            @Html.LabelFor(x => x.Message)
+            @Html.TextBoxFor(x => x.Message)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.Type)
+            @Html.EnumDropDownListFor(x => x.Type)
+        </div>
+        <input type="submit" value="Go!" />
+    </div>
+}
